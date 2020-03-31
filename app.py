@@ -14,11 +14,11 @@ class BodaccPCL(Resource):
             list_of_annonces = []
             for r in result:
                 list_of_annonces.append(
-                    {"PCL_TYPE": result["PCL_TYPE"], "PCL_DATE": result["PCL_DATE"]}
+                    {"PCL_TYPE": r["PCL_TYPE"], "PCL_DATE": r["PCL_DATE"]}
                 )
-            return {result["SIREN"]: list_of_annonces}
+            return {siren: list_of_annonces}
         else:
-            return {result["SIREN"]: []}
+            return {siren: []}
 
 
 api.add_resource(BodaccPCL, "/<string:siren>")
