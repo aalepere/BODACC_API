@@ -1,80 +1,22 @@
 FORMAT: 1A
-HOST: https://polls.apiblueprint.org/
+HOST: https://bodacc.herokuapp.com/
 
-# Arnaud Alepee
+# BODACC - Procédures collectives
 
-Polls is a simple API allowing consumers to view polls and vote in them.
+This API is a simple API to retrieves all BODACC filings related to procédure collectives for a given SIREN.
 
-## Questions Collection [/questions]
+## Annonces [/questions]
 
-### List All Questions [GET]
+### List of annonces for a given SIREN [GET]
 
 + Response 200 (application/json)
 
-        [
-            {
-                "question": "Favourite programming language?",
-                "published_at": "2015-08-05T08:40:51.620Z",
-                "choices": [
-                    {
-                        "choice": "Swift",
-                        "votes": 2048
-                    }, {
-                        "choice": "Python",
-                        "votes": 1024
-                    }, {
-                        "choice": "Objective-C",
-                        "votes": 512
-                    }, {
-                        "choice": "Ruby",
-                        "votes": 256
-                    }
-                ]
-            }
-        ]
-
-### Create a New Question [POST]
-
-You may create your own question using this action. It takes a JSON
-object containing a question and a collection of answers in the
-form of choices.
-
-+ Request (application/json)
-
         {
-            "question": "Favourite programming language?",
-            "choices": [
-                "Swift",
-                "Python",
-                "Objective-C",
-                "Ruby"
-            ]
-        }
-
-+ Response 201 (application/json)
-
-    + Headers
-
-            Location: /questions/2
-
-    + Body
-
-            {
-                "question": "Favourite programming language?",
-                "published_at": "2015-08-05T08:40:51.620Z",
-                "choices": [
-                    {
-                        "choice": "Swift",
-                        "votes": 0
-                    }, {
-                        "choice": "Python",
-                        "votes": 0
-                    }, {
-                        "choice": "Objective-C",
-                        "votes": 0
-                    }, {
-                        "choice": "Ruby",
-                        "votes": 0
-                    }
-                ]
-            }
+        "813251303": [
+                        {
+                        "PCL_TYPE": "Liste des cr\u00e9ances n\u00e9es apr\u00e8s le jugement d'ouverture d'une proc\u00e9dure de redressement judiciaire", 
+                        "PCL_DATE": "2019-12-23"}, 
+                        {"PCL_TYPE": "D\u00e9p\u00f4t de l'\u00e9tat des cr\u00e9ances", 
+                        "PCL_DATE": "2020-01-13"}, 
+                        {"PCL_TYPE": "Jugement de cl\u00f4ture pour insuffisance d'actif", 
+                        "PCL_DATE": "2020-01-15"}]}
