@@ -1,5 +1,8 @@
 [![CodeFactor](https://www.codefactor.io/repository/github/aalepere/bodacc_api/badge)](https://www.codefactor.io/repository/github/aalepere/bodacc_api)
 
+# Author
+Arnaud ALEPEE
+
 # Example
 
 ```shell
