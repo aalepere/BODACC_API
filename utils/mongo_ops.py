@@ -28,7 +28,7 @@ def insert_all(pcl_bodacc_files, url, annonce_collection):
             collection = {}
             if "numeroImmatriculation" in annonce:
                 # Some procedures collectives can have more than one company involved
-                if type(annonce["numeroImmatriculation"]) is list:
+                if isinstance(annonce["numeroImmatriculation"], list):
                     for comp in annonce["numeroImmatriculation"]:
                         collection["SIREN"] = comp[
                             "numeroIdentificationRCS"

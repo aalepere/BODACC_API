@@ -10,15 +10,12 @@ class BodaccPCL(Resource):
     def get(self, siren):
         collection = mongo_connect()
         result = collection.find({"SIREN": siren})
-        if result:
-            list_of_annonces = []
-            for r in result:
-                list_of_annonces.append(
-                    {"PCL_TYPE": r["PCL_TYPE"], "PCL_DATE": r["PCL_DATE"]}
-                )
-            return {siren: list_of_annonces}
-        else:
-            return {siren: []}
+        list_of_annonces = []
+        for r in result:
+            list_of_annonces.append(
+                {"PCL_TYPE": r["PCL_TYPE"], "PCL_DATE": r["PCL_DATE"]}
+            )
+        return {siren: list_of_annonces}
 
 
 api.add_resource(BodaccPCL, "/<string:siren>")
