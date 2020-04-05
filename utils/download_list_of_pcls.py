@@ -1,3 +1,4 @@
+""" Get list of bodacc filings available on the FTP """
 import pickle
 
 import requests

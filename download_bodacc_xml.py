@@ -1,3 +1,4 @@
+""" This script download new BODACC filings and save them into Mongo db """
 import pickle
 
 from env_conf import bodacc_url, pickle_file

@@ -1,4 +1,6 @@
+""" Connect to Mongo DB database """
 import os
+
 from pymongo import MongoClient
 
 
