@@ -32,10 +32,15 @@ In order to overcome those issues, we can create a database that will ingest the
 
 ## Infrastructure
 The infrastructure proposed is as follows:
+
 (1) A scheduler is loading the XML files from the FTP into the Mongo database every time a new XML is published.
+
 (2) A local computer (or another system) calls the GET API for a given company.
+
 (3) The flask API endpoint runs a query on Mongo for the given company that was used in the API call.
+
 (4) Mongo retrieves the relevant document from the collection.
+
 (5) The answer from Mongo is deserialise into a python dictionary which then sent back to the local computer.
 
 ## Solution
