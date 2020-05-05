@@ -31,6 +31,9 @@ All these notices are published by day and in a XML format on a FTP. There are 2
 In order to overcome those issues, we can create a database that will ingest the new files on a daily basis and expose this information through a REST API that will allow to retrieve all insolvency notices for a given company.
 
 ## Infrastructure
+
+![Image description](https://cdn-images-1.medium.com/max/1600/1*WecRNLFDXKPm387EXy460A.png)
+
 The infrastructure proposed is as follows:
 
 (1) A scheduler is loading the XML files from the FTP into the Mongo database every time a new XML is published.
